@@ -4,6 +4,12 @@ import (
 	"fmt"
 )
 
+func factorial(n int) int {
+	if n == 1 {
+		return 1
+	}
+	return n * factorial(n-1)
+}
 func main() {
 	fmt.Println("Hello World!")
 	var x = 3
@@ -13,4 +19,5 @@ func main() {
 	for i := 0; i < 3; i++ {
 		fmt.Print(arr[i], " ")
 	}
+	fmt.Println(factorial(8))
 }
