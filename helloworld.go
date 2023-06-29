@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
+var global int
+
 func factorial(n int) int {
 	if n == 1 {
 		return 1
@@ -46,6 +48,41 @@ func array_demo() {
 	}
 	fmt.Println()
 }
+func switch_case(x interface{}) {
+
+	switch v := x.(type) {
+	case float32:
+		fmt.Println("x is ", x)
+	case int:
+		fmt.Println("v is ", v)
+	case mytype:
+		fmt.Println("global is ", global)
+	default:
+		fmt.Println("default is ", 1234)
+	}
+}
+func double_dimensional_array(height int, width int) {
+	var matrix = make([][]int, height)
+	fmt.Printf("new matrix of %d and %d: \n[", height, width)
+	for i := range matrix {
+		matrix[i] = make([]int, width)
+	}
+	for i, row := range matrix {
+		for j, value := range row {
+			if i == height-1 && j == width-1 {
+				fmt.Printf("%d] \t", value)
+			} else {
+				fmt.Printf("%d, \t", value)
+			}
+
+		}
+
+		fmt.Println()
+	}
+}
+
+type mytype float32
+
 func main() {
 	fmt.Println("Hello World!")
 	var x = 3
@@ -53,4 +90,13 @@ func main() {
 	fmt.Println(factorial(8))
 	array_demo()
 	fmt.Println("substring of 'abcde' from 1 to 3 is:", substring(1, 3, "abcde"))
+	global := 43
+	switch_case(mytype(24))
+
+	switch_case(24)
+	switch_case(48.0)
+	fmt.Println("local global is ", global)
+	a := "abc"
+	fmt.Println(a == "abc")
+	double_dimensional_array(3, 5)
 }
