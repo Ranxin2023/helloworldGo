@@ -83,6 +83,19 @@ func double_dimensional_array(height int, width int) {
 
 type mytype float32
 
+func inner_func() {
+	var arr = []int{0, 1, 2, 3, 4, 5, 6}
+	slice := func(arr []int, i int, j int) []int {
+		var res = []int{}
+		for idx := i; idx < j; idx++ {
+			res = append(res, arr[idx])
+		}
+		return res
+	}
+	var arr_string = fmt.Sprint(slice(arr, 3, 6))
+	fmt.Println("arr is: " + arr_string)
+}
+
 func main() {
 	fmt.Println("Hello World!")
 	var x = 3
@@ -99,4 +112,5 @@ func main() {
 	a := "abc"
 	fmt.Println(a == "abc")
 	double_dimensional_array(3, 5)
+	inner_func()
 }
