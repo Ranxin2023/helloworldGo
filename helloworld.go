@@ -96,6 +96,21 @@ func inner_func() {
 	fmt.Println("arr is: " + arr_string)
 }
 
+func map_demo() {
+	var arr_idx = make(map[int][]int)
+	var arr = []int{10, 8, 3, 5, 2, 11, 10, 3, 2, 2, 6}
+	for i, num := range arr {
+		arr_idx[num] = append(arr_idx[num], i)
+	}
+	for key, idxs := range arr_idx {
+		fmt.Printf("element:%d: ", key)
+		for _, idx := range idxs {
+			fmt.Printf("%d ", idx)
+		}
+		fmt.Println()
+	}
+}
+
 func main() {
 	fmt.Println("Hello World!")
 	var x = 3
@@ -113,4 +128,5 @@ func main() {
 	fmt.Println(a == "abc")
 	double_dimensional_array(3, 5)
 	inner_func()
+	map_demo()
 }
