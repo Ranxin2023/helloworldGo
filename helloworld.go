@@ -111,6 +111,16 @@ func map_demo() {
 	}
 }
 
+func inner_recur_demo() {
+	var inner_factorial func(int) int
+	inner_factorial = func(n int) int {
+		if n == 0 {
+			return 1
+		}
+		return n * inner_factorial(n-1)
+	}
+	fmt.Println("inner factorial 8 is", inner_factorial(8))
+}
 func main() {
 	fmt.Println("Hello World!")
 	var x = 3
@@ -129,4 +139,5 @@ func main() {
 	double_dimensional_array(3, 5)
 	inner_func()
 	map_demo()
+	inner_recur_demo()
 }
