@@ -121,6 +121,14 @@ func inner_recur_demo() {
 	}
 	fmt.Println("inner factorial 8 is", inner_factorial(8))
 }
+func oop_demo() {
+	s1 := StudentConstructor("john", "1234", 20)
+	s1.Show()
+	s1.EnrollCourses("Physics")
+	s1.EnrollCourses("Chemistry")
+	s1.EnrollCourses("Data Structure")
+	s1.PrintCourses()
+}
 func main() {
 	fmt.Println("Hello World!")
 	var x = 3
@@ -140,4 +148,5 @@ func main() {
 	inner_func()
 	map_demo()
 	inner_recur_demo()
+	oop_demo()
 }
