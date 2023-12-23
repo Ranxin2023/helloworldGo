@@ -33,3 +33,10 @@ func (s *Student) PrintCourses() {
 	}
 
 }
+
+func (s *Student) changeName(newname string) {
+	s.Name = newname
+}
+func (s *Student) changeAge(newage int) {
+	s.Age = newage
+}

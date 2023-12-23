@@ -128,6 +128,9 @@ func oop_demo() {
 	s1.EnrollCourses("Chemistry")
 	s1.EnrollCourses("Data Structure")
 	s1.PrintCourses()
+	s1.changeName("tom")
+	s1.changeAge(21)
+	s1.Show()
 }
 func main() {
 	fmt.Println("Hello World!")
