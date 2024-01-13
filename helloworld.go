@@ -110,7 +110,17 @@ func map_demo() {
 		fmt.Println()
 	}
 }
-
+func set_demo() {
+	var num_set = make(map[int]bool)
+	num_set[1] = true
+	num_set[7] = true
+	num_set[5] = true
+	num_set[12] = true
+	num_set[9] = true
+	num_set[5] = true
+	fmt.Println("whether 5 is in num_set:", num_set[5])
+	fmt.Println("whether 10 is in num_set:", num_set[10])
+}
 func inner_recur_demo() {
 	var inner_factorial func(int) int
 	inner_factorial = func(n int) int {
@@ -121,6 +131,7 @@ func inner_recur_demo() {
 	}
 	fmt.Println("inner factorial 8 is", inner_factorial(8))
 }
+
 func oop_demo() {
 	s1 := StudentConstructor("john", "1234", 20)
 	s1.Show()
@@ -132,6 +143,7 @@ func oop_demo() {
 	s1.changeAge(21)
 	s1.Show()
 }
+
 func main() {
 	fmt.Println("Hello World!")
 	var x = 3
@@ -149,7 +161,9 @@ func main() {
 	fmt.Println(a == "abc")
 	double_dimensional_array(3, 5)
 	inner_func()
+	set_demo()
 	map_demo()
 	inner_recur_demo()
 	oop_demo()
+
 }
