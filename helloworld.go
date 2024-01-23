@@ -21,6 +21,10 @@ func substring(start int, end int, s string) string {
 	return string(ret)
 }
 
+func substring2(start int, end int, s string) string {
+	return s[start:end]
+}
+
 func array_demo() {
 	var arr = [3]int{2, 3, 4}
 	fmt.Println(arr)
@@ -151,6 +155,7 @@ func main() {
 	fmt.Println(factorial(8))
 	array_demo()
 	fmt.Println("substring of 'abcde' from 1 to 3 is:", substring(1, 3, "abcde"))
+	fmt.Println("substring2 of 'abcde' from 1 to 3 is:", substring2(1, 3, "abcde"))
 	global := 43
 	switch_case(mytype(24))
 
