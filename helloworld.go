@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"strconv"
+	"strings"
 )
 
 var global int
@@ -135,6 +137,25 @@ func inner_recur_demo() {
 	}
 	fmt.Println("inner factorial 8 is", inner_factorial(8))
 }
+func string_convert_demo() {
+	num := 123
+	num_str := strconv.Itoa(num)
+	fmt.Printf("123 convert to string is:%s\n", num_str)
+	num_back, _ := strconv.Atoi(num_str)
+	fmt.Printf("'123' convert to int is:%d\n", num_back)
+
+}
+func string_builder_demo() {
+	var sentence strings.Builder
+	var words = []string{"hello", "world", "this", "is", "Jack"}
+	for _, word := range words {
+		if sentence.Len() > 0 {
+			sentence.WriteString(" ")
+		}
+		sentence.WriteString(word)
+	}
+	fmt.Printf("The sentence is %s", sentence.String())
+}
 
 func oop_demo() {
 	s1 := StudentConstructor("john", "1234", 20)
@@ -170,5 +191,6 @@ func main() {
 	map_demo()
 	inner_recur_demo()
 	oop_demo()
-
+	string_builder_demo()
+	string_convert_demo()
 }
